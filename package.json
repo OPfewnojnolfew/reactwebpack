@@ -1,0 +1,13 @@
+{
+  "name": "webapp-reactwebpack",
+  "version": "0.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "css-loader": "~0.19.0",
+    "style-loader": "~0.12.4",
+    "babel": "~5.8.23"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}
