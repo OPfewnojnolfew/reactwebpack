@@ -22,16 +22,21 @@
 
 // module.exports = config;
 
-
+var webpack=require('webpack');
 module.exports = {
-    entry: "./entry.js",
+    entry: ['./assets/js/index1.js', './assets/js/index.js'],
     output: {
         path: __dirname,
-        filename: "bundle.js"
+        filename: "test.js",
+        plugins: [new webpack.CommonsChunkPlugin("init.js")]
     },
     module: {
-        loaders: [
-            { test: /\.css$/, loader: "style!css" }
-        ]
+        loaders: [{
+            test: /\.js?$/,
+            loader: 'babel'
+        }, {
+            test: /\.css$/,
+            loader: "style!css"
+        }]
     }
-}
+};
