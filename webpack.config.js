@@ -22,14 +22,18 @@
 
 // module.exports = config;
 
-var webpack=require('webpack');
+var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 module.exports = {
-    entry: ['./assets/js/index1.js', './assets/js/index.js'],
+    // entry: {
+    //     p1: "./assets/js/index1.js",
+    //     p2: "./assets/js/index.js"
+    // },
+    entry: ['./assets/js/index.js'],
     output: {
         path: __dirname,
-        filename: "test.js",
-        plugins: [new webpack.CommonsChunkPlugin("init.js")]
+        filename: "test.js"
     },
+    plugins: [new CommonsChunkPlugin("init.js", ["./assets/js/index.js"])],
     module: {
         loaders: [{
             test: /\.js?$/,
